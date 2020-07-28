@@ -40,14 +40,6 @@ public class InitialDatabaseMigration {
     @ChangeSet(order = "002", id = "addRoomTypes", author = "testAuthor")
     public void addRoomTypes(MongoDatabase db) {
         MongoCollection<Document> hotelCollection = db.getCollection("room");
-//        ArrayList<Room> krooms = new ArrayList<>();
-//        krooms.add(new Room("22"));
-//        krooms.add(new Room("23"));
-//        krooms.add(new Room("24"));
-//        ArrayList<Room> qrooms = new ArrayList<>();
-//        qrooms.add(new Room("22"));
-//        qrooms.add(new Room("23"));
-//        qrooms.add(new Room("24"));
 
         Document kroom1 = new Document().append("roomNo", "22");
         Document kroom2 = new Document().append("roomNo", "23");
@@ -82,10 +74,5 @@ public class InitialDatabaseMigration {
         hotelCollection.insertOne(doc);
         hotelCollection.insertOne(doc2);
     }
-//
-//    @ChangeSet(order = "009", id = "someChangeWithSpringDataTemplate", author = "testAuthor")
-//    public void someChange5(MongoTemplate mongoTemplate) {
-//        User user = new User("fff", "lll", "1234", "sjdhfkjsdf");
-//        mongoTemplate.save(user);
-//    }
+
 }

@@ -2,13 +2,12 @@ package com.travellodge.hotelchainservice.controller;
 
 import com.travellodge.hotelchainservice.domain.Hotel;
 import com.travellodge.hotelchainservice.service.HotelService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
 import java.util.List;
 
+@CrossOrigin
 @RestController("api/hotels")
 public class HotelController {
 
@@ -24,8 +23,8 @@ public class HotelController {
         return hotelService.getAllHotels();
     }
 
-    @GetMapping("/destination/{destination}")
-    public List<Hotel> getDestinationHotels(@PathVariable String destination) {
+    @GetMapping("/get")
+    public List<Hotel> getDestinationHotels(@RequestParam(value = "destination") String destination) {
         return hotelService.getAllHotels();
     }
 }
