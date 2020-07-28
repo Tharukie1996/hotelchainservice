@@ -20,7 +20,7 @@ public class RoomController {
     }
 
     @GetMapping("/available/{hotelId}")
-    List<AvailableRoomDTO> getAvailableRooms(@PathVariable String hotelId, @RequestParam BookedDates bookedDates,
+    List<AvailableRoomDTO> getAvailableRooms(@PathVariable String hotelId, @RequestBody BookedDates bookedDates,
             @RequestParam int roomCount, @RequestParam int guestCount) {
         return roomService.getAvailableRooms(hotelId, bookedDates.getCheckInDate(), bookedDates.getCheckOutDate(), roomCount, guestCount);
     }
