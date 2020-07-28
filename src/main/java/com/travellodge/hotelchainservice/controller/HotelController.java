@@ -25,6 +25,6 @@ public class HotelController {
 
     @GetMapping("/get")
     public List<Hotel> getDestinationHotels(@RequestParam(value = "destination") String destination) {
-        return hotelService.getAllHotels();
+        return hotelService.getDestinationHotels(destination);
     }
 }

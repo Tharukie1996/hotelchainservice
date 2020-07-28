@@ -6,5 +6,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import java.util.List;
 
 public interface HotelRepository extends MongoRepository<Hotel, String> {
-    List<Hotel> findAllByLocation(String location);
+    List<Hotel> findByLocation(String location);
 }

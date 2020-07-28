@@ -22,6 +22,6 @@ public class HotelService {
     }
 
     public List<Hotel> getDestinationHotels(String dest) {
-        return hotelRepository.findAllByLocation(dest);
+        return hotelRepository.findByLocation(dest);
     }
 }
