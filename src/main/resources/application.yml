@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: hotelchainsystem
+    active: local
+  profiles:
+    active: local
+  data:
+    mongodb:
+      url: mongodb://localhost:27017/testdb?readPreference=primaryPreferred
+      database: hotelchaindb
+server:
+  port: 8080
